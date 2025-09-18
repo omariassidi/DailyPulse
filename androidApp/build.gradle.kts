@@ -5,11 +5,12 @@ plugins {
 
 android {
     namespace = "com.omarassidi.dailypulse.android"
-    compileSdk = 34
+    compileSdk = 35
     defaultConfig {
-        applicationId = "com.omarassidi.dailypulse.android"
+        applicationId = "com.omarassidi.dailypulse"
         minSdk = 26
-        targetSdk = 34
+        //noinspection EditedTargetSdkVersion
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
     }
