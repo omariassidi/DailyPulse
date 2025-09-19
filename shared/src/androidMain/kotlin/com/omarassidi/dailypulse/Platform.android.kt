@@ -1,7 +1,13 @@
 package com.omarassidi.dailypulse
 
-class AndroidPlatform : Platform {
-    override val name: String = "Android ${android.os.Build.VERSION.SDK_INT}"
-}
+import android.content.res.Resources
+import android.os.Build
+import kotlin.math.round
 
-actual fun getPlatform(): Platform = AndroidPlatform()
+actual class Platform {
+    actual val osName: String = "Android"
+    actual val osVersion: String = Build.VERSION.SDK_INT.toString()
+    actual val deviceModel: String = "${Build.MANUFACTURER} ${Build.MODEL}"
+    actual val density: Int = round(Resources.getSystem().displayMetrics.density).toInt()
+
+}

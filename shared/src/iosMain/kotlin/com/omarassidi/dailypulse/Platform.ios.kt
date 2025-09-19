@@ -1,9 +1,12 @@
 package com.omarassidi.dailypulse
 
 import platform.UIKit.UIDevice
+import platform.UIKit.UIScreen
+import kotlin.math.round
 
-class IOSPlatform: Platform {
-    override val name: String = UIDevice.currentDevice.systemName() + " " + UIDevice.currentDevice.systemVersion
+actual class Platform {
+    actual val osName: String = "iOS"
+    actual val osVersion: String = UIDevice.currentDevice.systemVersion
+    actual val deviceModel: String = UIDevice.currentDevice.model
+    actual val density: Int = round(UIScreen.mainScreen.scale).toInt()
 }
-
-actual fun getPlatform(): Platform = IOSPlatform()
