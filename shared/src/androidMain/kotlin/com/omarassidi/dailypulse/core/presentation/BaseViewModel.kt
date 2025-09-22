@@ -1,4 +1,4 @@
-package com.omarassidi.dailypulse
+package com.omarassidi.dailypulse.core.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

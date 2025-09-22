@@ -1,4 +1,4 @@
-package com.omarassidi.dailypulse
+package com.omarassidi.dailypulse.core.presentation
 
 import kotlinx.coroutines.CoroutineScope
 

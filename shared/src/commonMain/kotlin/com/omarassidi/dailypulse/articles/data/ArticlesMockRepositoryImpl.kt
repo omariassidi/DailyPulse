@@ -1,47 +1,36 @@
-package com.omarassidi.dailypulse.articles
+package com.omarassidi.dailypulse.articles.data
 
-import com.omarassidi.dailypulse.BaseViewModel
+import com.omarassidi.dailypulse.articles.domain.Article
+import com.omarassidi.dailypulse.core.data.ArticlesRepository
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.launch
 
-class ArticlesViewModel : BaseViewModel() {
-    private val _state = MutableStateFlow(ArticlesState(isLoading = true))
-    val state: StateFlow<ArticlesState>
-        get() = _state.asStateFlow()
-
-    init {
-        getArticles()
-    }
-
-    private fun getArticles() {
-        scope.launch {
-            val articles = fetchArticles()
-            _state.emit(ArticlesState(articles = articles))
-        }
-    }
-
-    private suspend fun fetchArticles(): List<Article> {
-        delay(500)
-        return mockArticles
+class ArticlesMockRepositoryImpl : ArticlesRepository {
+    override suspend fun fetchArticles(): Result<List<Article>> {
+        delay(300)
+        return Result.success(mockArticles.map {
+            Article(
+                it.title,
+                it.description,
+                it.date,
+                it.imageUrl
+            )
+        })
     }
 
     private val mockArticles = listOf(
-        Article(
+        ArticleResponse(
             "Stock market today: Live updates - CNBC",
             "Futures were higher in premarket trading as Wall Street tried to regain its footing.",
             "2023-11-09",
             "https://image.cnbcfm.com/api/v1/image/107326078-1698758530118-gettyimages-1765623456-wall26362_igj6ehhp.jpeg?v=1698758587&w=1920&h=1080"
         ),
-        Article(
+        ArticleResponse(
             "Best iPhone Deals (2023): Carrier Deals, Unlocked iPhones",
             "Apple's smartphones rarely go on sale, but if you’re looking to upgrade (or you're gift shopping), here are a few cost-saving options.",
             "2023-11-09",
             "https://media.wired.com/photos/622aa5c8cca6acf55fb70b57/191:100/w_1280,c_limit/iPhone-13-Pro-Colors-SOURCE-Apple-Gear.jpg",
         ),
-        Article(
+        ArticleResponse(
             "Samsung details ‘Galaxy AI’ and a feature that can translate phone calls in real time",
             "In a new blog post, Samsung previewed what it calls “a new era of Galaxy AI” coming to its smartphones and detailed a feature that will use artificial intelligence to translate phone calls in real time.",
             "2023-11-09",
