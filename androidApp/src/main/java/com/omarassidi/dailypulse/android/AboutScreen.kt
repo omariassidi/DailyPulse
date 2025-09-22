@@ -27,8 +27,9 @@ import com.omarassidi.dailypulse.Platform
 @Composable
 fun Toolbar() {
     TopAppBar(
-        title = { Text(text = "About Device", style = MaterialTheme.typography.headlineLarge) }, colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = MaterialTheme.colorScheme.background
+        title = { Text(text = "About Device", style = MaterialTheme.typography.headlineLarge) },
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = Color.Transparent
         )
     )
 }
@@ -36,6 +37,7 @@ fun Toolbar() {
 @Composable
 fun AboutScreen(modifier: Modifier = Modifier) {
     Scaffold(
+        containerColor = Color.Transparent,
         modifier = modifier,
         topBar = {
             Toolbar()
