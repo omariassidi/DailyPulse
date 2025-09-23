@@ -1,7 +1,7 @@
-package com.omarassidi.dailypulse.articles.data
+package com.omarassidi.dailypulse.articles.data.repository
 
-import com.omarassidi.dailypulse.articles.domain.Article
-import com.omarassidi.dailypulse.core.data.ArticlesRepository
+import com.omarassidi.dailypulse.articles.data.responses.ArticleResponse
+import com.omarassidi.dailypulse.articles.domain.models.Article
 import kotlinx.coroutines.delay
 
 class ArticlesMockRepositoryImpl : ArticlesRepository {

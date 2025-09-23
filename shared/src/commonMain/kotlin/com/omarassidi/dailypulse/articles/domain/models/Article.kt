@@ -1,4 +1,4 @@
-package com.omarassidi.dailypulse.articles.domain
+package com.omarassidi.dailypulse.articles.domain.models
 
 data class Article(
     val title: String,

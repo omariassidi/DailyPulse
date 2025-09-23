@@ -1,7 +1,7 @@
-package com.omarassidi.dailypulse.articles.domain
+package com.omarassidi.dailypulse.articles.domain.usecase
 
-import com.omarassidi.dailypulse.core.data.ArticlesRepository
-import com.omarassidi.dailypulse.core.domain.ArticlesUseCase
+import com.omarassidi.dailypulse.articles.data.repository.ArticlesRepository
+import com.omarassidi.dailypulse.articles.domain.models.Article
 
 class ArticlesUseCaseImpl(private val repository: ArticlesRepository) : ArticlesUseCase {
     override suspend fun getArticles(): Result<List<Article>> {

@@ -1,4 +1,4 @@
-package com.omarassidi.dailypulse.articles.data
+package com.omarassidi.dailypulse.articles.data.responses
 
 data class ArticleResponse(
     val title: String,
