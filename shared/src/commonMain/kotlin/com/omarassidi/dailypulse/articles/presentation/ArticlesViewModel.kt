@@ -1,8 +1,8 @@
 package com.omarassidi.dailypulse.articles.presentation
 
-import com.omarassidi.dailypulse.articles.data.ArticlesMockRepositoryImpl
-import com.omarassidi.dailypulse.articles.domain.ArticlesUseCaseImpl
-import com.omarassidi.dailypulse.core.domain.ArticlesUseCase
+import com.omarassidi.dailypulse.articles.data.repository.ArticlesMockRepositoryImpl
+import com.omarassidi.dailypulse.articles.domain.usecase.ArticlesUseCaseImpl
+import com.omarassidi.dailypulse.articles.domain.usecase.ArticlesUseCase
 import com.omarassidi.dailypulse.core.presentation.BaseViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

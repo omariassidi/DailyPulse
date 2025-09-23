@@ -1,6 +1,6 @@
 package com.omarassidi.dailypulse.articles.presentation
 
-import com.omarassidi.dailypulse.articles.domain.Article
+import com.omarassidi.dailypulse.articles.domain.models.Article
 
 data class ArticlesState(
     val articles: List<Article> = listOf(),
