@@ -1,4 +1,4 @@
-package com.omarassidi.dailypulse
+package com.omarassidi.dailypulse.about
 
 import platform.UIKit.UIDevice
 import platform.UIKit.UIScreen

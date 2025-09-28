@@ -4,6 +4,7 @@ import com.omarassidi.dailypulse.articles.data.repository.ArticlesMockRepository
 import com.omarassidi.dailypulse.articles.domain.usecase.ArticlesUseCaseImpl
 import com.omarassidi.dailypulse.articles.domain.usecase.ArticlesUseCase
 import com.omarassidi.dailypulse.core.presentation.BaseViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -22,6 +23,9 @@ class ArticlesViewModel : BaseViewModel() {
 
     private fun getArticles() {
         scope.launch {
+            delay(1500)
+            _state.emit(ArticlesState(errorMessage = "Something went wrong", isLoading = true))
+            delay(1500)
             val result = useCase.getArticles()
             if (result.isSuccess) {
                 _state.emit(ArticlesState(articles = result.getOrThrow()))

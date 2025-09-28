@@ -1,4 +1,4 @@
-package com.omarassidi.dailypulse
+package com.omarassidi.dailypulse.about
 
 import android.content.res.Resources
 import android.os.Build

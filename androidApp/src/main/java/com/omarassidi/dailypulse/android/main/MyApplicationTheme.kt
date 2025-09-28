@@ -1,4 +1,4 @@
-package com.omarassidi.dailypulse.android
+package com.omarassidi.dailypulse.android.main
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape

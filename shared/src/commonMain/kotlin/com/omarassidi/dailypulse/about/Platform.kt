@@ -1,4 +1,4 @@
-package com.omarassidi.dailypulse
+package com.omarassidi.dailypulse.about
 
 expect class Platform {
     val osName: String

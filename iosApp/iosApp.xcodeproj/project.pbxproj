@@ -12,6 +12,7 @@
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		E54C62832E7DE814000AECD2 /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54C62822E7DE80F000AECD2 /* AboutScreen.swift */; };
+		E5C693892E84834A00380E15 /* ArticlesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C693882E84834300380E15 /* ArticlesScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,7 @@
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E54C62822E7DE80F000AECD2 /* AboutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
+		E5C693882E84834300380E15 /* ArticlesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,12 +78,10 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
-				E54C62822E7DE80F000AECD2 /* AboutScreen.swift */,
-				058557BA273AAA24004C7B11 /* Assets.xcassets */,
-				7555FF82242A565900829871 /* ContentView.swift */,
-				7555FF8C242A565B00829871 /* Info.plist */,
-				2152FB032600AC8F00CF470E /* iOSApp.swift */,
+				E5C693872E84832900380E15 /* main */,
+				E5C693842E84830100380E15 /* features */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
+				7555FF8C242A565B00829871 /* Info.plist */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -91,6 +91,41 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5C693842E84830100380E15 /* features */ = {
+			isa = PBXGroup;
+			children = (
+				E5C693862E84831700380E15 /* articles */,
+				E5C693852E84830C00380E15 /* about */,
+			);
+			path = features;
+			sourceTree = "<group>";
+		};
+		E5C693852E84830C00380E15 /* about */ = {
+			isa = PBXGroup;
+			children = (
+				E54C62822E7DE80F000AECD2 /* AboutScreen.swift */,
+			);
+			path = about;
+			sourceTree = "<group>";
+		};
+		E5C693862E84831700380E15 /* articles */ = {
+			isa = PBXGroup;
+			children = (
+				E5C693882E84834300380E15 /* ArticlesScreen.swift */,
+			);
+			path = articles;
+			sourceTree = "<group>";
+		};
+		E5C693872E84832900380E15 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				7555FF82242A565900829871 /* ContentView.swift */,
+				2152FB032600AC8F00CF470E /* iOSApp.swift */,
+				058557BA273AAA24004C7B11 /* Assets.xcassets */,
+			);
+			path = main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +223,7 @@
 			files = (
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				E5C693892E84834A00380E15 /* ArticlesScreen.swift in Sources */,
 				E54C62832E7DE814000AECD2 /* AboutScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,7 +364,7 @@
 					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
 				);
 				INFOPLIST_FILE = iosApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,7 +394,7 @@
 					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
 				);
 				INFOPLIST_FILE = iosApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
