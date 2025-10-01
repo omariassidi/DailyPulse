@@ -22,13 +22,15 @@ class ArticlesUseCaseImpl(private val repository: ArticlesRepository) : Articles
 
     private fun parsePublishedDate(date: String): String {
         val today = Clock.System.todayIn(TimeZone.currentSystemDefault())
-        val days = today.daysUntil(
-            Instant.parse(date).toLocalDateTime(TimeZone.currentSystemDefault()).date
+        val days = abs(
+            today.daysUntil(
+                Instant.parse(date).toLocalDateTime(TimeZone.currentSystemDefault()).date
+            )
         )
 
         return when {
-            abs(days) > 1 -> "${days} days ago."
-            abs(days) == 1 -> "Yesterday"
+            days > 1 -> "${days} days ago."
+            days == 1 -> "Yesterday"
             else -> "Today"
         }
     }

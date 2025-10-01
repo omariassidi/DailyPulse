@@ -18,7 +18,6 @@ class ArticlesViewModelWrapper {
         viewModel = ArticlesInjector().viewModel
         articleState = viewModel.state.value
     }
-        
     
     func startObserving() {
         Task {
@@ -55,8 +54,7 @@ struct ArticlesScreen: View {
                 }
                 
             }.onAppear {
-                viewModel.startObserving()
-            }
+                viewModel.startObserving()            }
         }
     }
     

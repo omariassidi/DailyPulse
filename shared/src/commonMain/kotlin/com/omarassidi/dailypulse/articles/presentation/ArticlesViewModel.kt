@@ -27,6 +27,7 @@ class ArticlesViewModel(private val useCase: ArticlesUseCase) : BaseViewModel() 
         getArticles()
     }
 
+
     private fun getArticles() {
         scope.launch {
             val result = useCase.getArticles()
