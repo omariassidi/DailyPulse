@@ -20,7 +20,6 @@ import com.omarassidi.dailypulse.articles.presentation.ArticlesViewModel
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val viewModel: ArticlesViewModel by viewModels()
         enableEdgeToEdge(
             navigationBarStyle = SystemBarStyle.light(
                 Color.Transparent.toArgb(),
@@ -34,7 +33,7 @@ class MainActivity : ComponentActivity() {
                         .fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ArticlesScreen(articlesViewModel = viewModel) {}
+                    AppScaffold()
                 }
             }
         }

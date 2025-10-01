@@ -3,7 +3,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <application
+        android:name=".main.MyApplication"
         android:allowBackup="false"
+        android:label="Daily pulse"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity

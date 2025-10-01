@@ -9,10 +9,10 @@ class ArticlesMockRepositoryImpl : ArticlesRepository {
         delay(300)
         return Result.success(mockArticles.map {
             Article(
-                it.title,
-                it.description,
-                it.date,
-                it.imageUrl
+                it.title ?: "",
+                it.description ?: "",
+                it.date ?: "",
+                it.imageUrl ?: ""
             )
         })
     }

@@ -23,6 +23,8 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "META-INF/versions/**"
+            excludes += "META-INF/*.kotlin_module"
         }
     }
     buildTypes {
@@ -48,4 +50,6 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.androidx.navigation.compose)
     debugImplementation(libs.compose.ui.tooling)
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
 }

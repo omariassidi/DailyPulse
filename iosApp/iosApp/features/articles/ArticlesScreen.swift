@@ -15,7 +15,7 @@ class ArticlesViewModelWrapper {
     var articleState: ArticlesState
     
     init() {
-        viewModel = ArticlesViewModel()
+        viewModel = ArticlesInjector().viewModel
         articleState = viewModel.state.value
     }
         

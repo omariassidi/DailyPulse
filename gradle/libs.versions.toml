@@ -9,6 +9,9 @@ viewModel = "2.6.2"
 coroutines = "1.8.1"
 coilCompose = "2.5.0"
 navigationCompose = "2.7.5"
+ktorClient = "2.3.5"
+kotlinxDatetime = "0.4.1"
+koin = "3.4.3"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -22,6 +25,15 @@ compose-material3 = { module = "androidx.compose.material3:material3", version.r
 viewModel = {module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "viewModel"}
 coroutines = {module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines"}
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorClient" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorClient" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorClient" }
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorClient" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktorClient" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

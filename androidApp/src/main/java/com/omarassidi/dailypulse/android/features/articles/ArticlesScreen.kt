@@ -40,13 +40,15 @@ import coil.compose.AsyncImagePainter
 import com.omarassidi.dailypulse.android.main.MyApplicationTheme
 import com.omarassidi.dailypulse.articles.domain.models.Article
 import com.omarassidi.dailypulse.articles.presentation.ArticlesViewModel
+import org.koin.androidx.compose.getViewModel
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun ArticlesScreen(
     modifier: Modifier = Modifier,
-    articlesViewModel: ArticlesViewModel,
     onAboutClicked: () -> Unit
 ) {
+    val articlesViewModel: ArticlesViewModel = getViewModel()
     val state by articlesViewModel.state.collectAsState()
     Scaffold(
         topBar = {
@@ -163,6 +165,6 @@ fun AppBar(modifier: Modifier = Modifier, onAboutClicked: () -> Unit) {
 @Composable
 fun ArticlesScreenPreview() {
     MyApplicationTheme {
-        ArticlesScreen(modifier = Modifier.fillMaxSize(), ArticlesViewModel()) {}
+        ArticlesScreen(modifier = Modifier.fillMaxSize()) {}
     }
 }
