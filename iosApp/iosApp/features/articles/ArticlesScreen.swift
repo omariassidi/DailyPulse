@@ -54,7 +54,10 @@ struct ArticlesScreen: View {
                 }
                 
             }.onAppear {
-                viewModel.startObserving()            }
+                viewModel.startObserving()
+            }.refreshable {
+                viewModel.viewModel.getArticles(forceRefresh: true)
+            }
         }
     }
     

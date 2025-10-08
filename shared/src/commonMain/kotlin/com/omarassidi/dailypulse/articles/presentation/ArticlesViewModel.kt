@@ -28,9 +28,10 @@ class ArticlesViewModel(private val useCase: ArticlesUseCase) : BaseViewModel() 
     }
 
 
-    private fun getArticles() {
+    fun getArticles(forceRefresh: Boolean = false) {
         scope.launch {
-            val result = useCase.getArticles()
+            _state.emit(ArticlesState(isLoading = true, articles = _state.value.articles))
+            val result = useCase.getArticles(forceRefresh)
             if (result.isSuccess) {
                 _state.emit(ArticlesState(articles = result.getOrThrow()))
             } else {

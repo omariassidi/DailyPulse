@@ -50,6 +50,6 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.androidx.navigation.compose)
     debugImplementation(libs.compose.ui.tooling)
-    implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
+    implementation (libs.accompanist.swiperefresh)
 }

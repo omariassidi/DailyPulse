@@ -42,6 +42,8 @@ import com.omarassidi.dailypulse.articles.domain.models.Article
 import com.omarassidi.dailypulse.articles.presentation.ArticlesViewModel
 import org.koin.androidx.compose.getViewModel
 import org.koin.androidx.compose.koinViewModel
+import com.google.accompanist.swiperefresh.SwipeRefresh
+import com.google.accompanist.swiperefresh.SwipeRefreshState
 
 @Composable
 fun ArticlesScreen(
@@ -61,28 +63,30 @@ fun ArticlesScreen(
                 8.dp, alignment = Alignment.CenterVertically
             ), horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            if (state.isLoading) {
-                Loader()
-            }
             if (state.errorMessage != null) {
                 ErrorMessage(errorMessage = state.errorMessage!!)
             }
             if (state.articles.isNotEmpty()) {
-                ArticleListView(articles = state.articles)
+                ArticlesListView(articles = state.articles, isLoading = state.isLoading){ articlesViewModel.getArticles(true) }
             }
         }
     }
 
 }
-
 @Composable
-fun ArticleListView(modifier: Modifier = Modifier, articles: List<Article>) {
-    LazyColumn(modifier = modifier.fillMaxSize()) {
-        items(articles) {
-            ArticleRowView(article = it)
+fun ArticlesListView(articles: List<Article>, isLoading: Boolean, onRefresh: () -> Unit) {
+
+    SwipeRefresh(
+        state = SwipeRefreshState(isLoading),
+        onRefresh = onRefresh) {
+        LazyColumn(modifier = Modifier.fillMaxSize()) {
+            items(articles) { article ->
+                ArticleRowView(article = article)
+            }
         }
     }
 }
+
 
 @Composable
 fun ArticleRowView(modifier: Modifier = Modifier, article: Article) {
@@ -130,17 +134,6 @@ fun ErrorMessage(modifier: Modifier = Modifier, errorMessage: String) {
         Text(
             text = errorMessage,
             style = TextStyle(fontSize = 28.sp, textAlign = TextAlign.Center, color = Color.White)
-        )
-    }
-}
-
-@Composable
-fun Loader(modifier: Modifier = Modifier) {
-    Box(modifier = modifier, contentAlignment = Alignment.Center) {
-        CircularProgressIndicator(
-            modifier = Modifier.size(84.dp),
-            color = MaterialTheme.colorScheme.surfaceVariant,
-            trackColor = MaterialTheme.colorScheme.secondary
         )
     }
 }

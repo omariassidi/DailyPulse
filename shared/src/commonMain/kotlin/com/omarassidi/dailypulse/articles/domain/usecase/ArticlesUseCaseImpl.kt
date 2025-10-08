@@ -12,8 +12,8 @@ import kotlinx.datetime.todayIn
 import kotlin.math.abs
 
 class ArticlesUseCaseImpl(private val repository: ArticlesRepository) : ArticlesUseCase {
-    override suspend fun getArticles(): Result<List<Article>> {
-        return repository.fetchArticles().map {
+    override suspend fun getArticles(forceRefresh: Boolean): Result<List<Article>> {
+        return repository.fetchArticles(forceRefresh).map {
             it.map { article ->
                 article.copy(date = parsePublishedDate(article.date))
             }

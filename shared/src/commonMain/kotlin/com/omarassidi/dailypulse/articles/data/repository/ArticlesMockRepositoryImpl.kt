@@ -5,7 +5,7 @@ import com.omarassidi.dailypulse.articles.domain.models.Article
 import kotlinx.coroutines.delay
 
 class ArticlesMockRepositoryImpl : ArticlesRepository {
-    override suspend fun fetchArticles(): Result<List<Article>> {
+    override suspend fun fetchArticles(forceRefresh: Boolean): Result<List<Article>> {
         delay(300)
         return Result.success(mockArticles.map {
             Article(
